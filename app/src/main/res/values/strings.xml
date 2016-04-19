@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Popular_Movie_App</string>
+    <string name="title_activity_forecst_fregment">ForecstFregment</string>
+    <string name="action_settings">Settings</string>
 </resources>
