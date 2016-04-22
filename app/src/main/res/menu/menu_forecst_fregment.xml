@@ -7,4 +7,13 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item android:id="@+id/action_refresh"
+        android:title="@string/refresh"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_sort_p"
+        android:title="@string/Sort_P"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_sort_r"
+        android:title="@string/Sort_R"
+        app:showAsAction="never"/>
 </menu>

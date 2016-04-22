@@ -1,12 +1,10 @@
 package com.example.sangwan.popular_movie_app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-
-import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    /*    if (savedInstanceState == null) {
+       if (savedInstanceState == null) {
            getSupportFragmentManager().beginTransaction().add(R.id.containar, new ForecastFragment()).commit();
-        }*/
-        imageView = (ImageView)findViewById(R.id.imageView1);
-        Picasso.with(getApplicationContext()).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+        }
+      //  imageView = (ImageView)findViewById(R.id.imageView1);
+      //  Picasso.with(getApplicationContext()).load("http://i.imgur.com/DvpvklR.png").into(imageView);
     }
 
     @Override
