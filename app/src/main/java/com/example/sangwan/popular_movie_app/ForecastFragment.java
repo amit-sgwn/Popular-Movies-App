@@ -8,8 +8,10 @@ import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -18,16 +20,18 @@ public class ForecastFragment extends Fragment {
 
     public ForecastFragment() {
     }
-
+    ImageView imageView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //http://image.tmdb.org/t/p/w185//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg
         return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -41,5 +45,36 @@ public class ForecastFragment extends Fragment {
         inflater.inflate(R.menu.menu_forecst_fregment,menu);
     }
 
-    public class FatchImage extends AsyncTask<Void,Void,Void>
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // Handle sorting
+        int id = item.getItemId();
+        if(id==R.id.action_refresh){
+
+        }
+        else if(id==R.id.action_sort_p){
+
+        }
+        else if(id==R.id.action_sort_r){
+
+        }
+        else{
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public class FatchImage extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            return null;
+        }
+    }
 }
