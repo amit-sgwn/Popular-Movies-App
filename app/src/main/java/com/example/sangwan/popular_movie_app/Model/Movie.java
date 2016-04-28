@@ -1,7 +1,16 @@
 package com.example.sangwan.popular_movie_app.Model;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.sangwan.popular_movie_app.R;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by Amit Sangwan on 28-04-2016.
@@ -67,7 +76,29 @@ public class Movie implements Parcelable {
         return mBackdrop;
     }
 
+    public String getmPosterUrl(Context context){
+        if(mPoster != null && mPoster.isEmpty()){
+            return context.getResources().getString(R.string.url_for_downloading_poster)+mPoster;
+        }
+        return null;
+    }
 
+    public String getReleaseDate(Context context) {
+        String inputPattern = "yyyy-MM-dd";
+        SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern, Locale.US);
+        if (mReleaseDate != null && !mReleaseDate.isEmpty()) {
+            try {
+                Date date = inputFormat.parse(mReleaseDate);
+                return DateFormat.getDateInstance().format(date);
+            } catch (ParseException e) {
+                // Log.e(LOG_TAG, "The Release data was not parsed successfully: " + mReleaseDate);
+                // Return not formatted date
+            }
+        } else {
+            mReleaseDate = context.getString(R.string.release_date_missing);
+        }
+        return mReleaseDate;
+    }
 
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
         @Override

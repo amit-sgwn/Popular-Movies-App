@@ -6,4 +6,7 @@
     <string name="refresh" >Refresh</string>
     <string name="Sort_P">Sort by Popularity</string>
     <string name="Sort_R">Sort by Rating</string>
+    <string name="url_for_downloading_poster">http://image.tmdb.org/t/p/w342</string>
+    <string name="url_for_downloading_backdrop">http://image.tmdb.org/t/p/original</string>
+    <string name="release_date_missing">Release date is unknown</string>
 </resources>
