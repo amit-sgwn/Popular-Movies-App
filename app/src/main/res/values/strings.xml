@@ -3,7 +3,7 @@
     <string name="title_activity_forecst_fregment">ForecstFregment</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_forecast">Forecast</string>
-    <string name="refresh" >Refresh</string>
+    <string name="refresh">Refresh</string>
     <string name="Sort_P">Sort by Popularity</string>
     <string name="Sort_R">Sort by Rating</string>
     <string name="url_for_downloading_poster">http://image.tmdb.org/t/p/w342</string>

@@ -35,7 +35,7 @@ public class ForecastFragment extends Fragment {
     View view;
     GridView gridView;
     String moviesJsonStr = null;
-    String orderBy;
+    static String orderBy;
     ArrayList<String> movieIdArray = new ArrayList<String>();
 
 
@@ -73,6 +73,9 @@ public class ForecastFragment extends Fragment {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_sort_p:
+                FatchImage fatchImage = new FatchImage();
+                ForecastFragment.orderBy="popularity";
+                fatchImage.execute();
                 break;
             case R.id.action_sort_r:
                 break;
@@ -82,6 +85,7 @@ public class ForecastFragment extends Fragment {
     }
 
     public class FatchImage extends AsyncTask<Void, Void, String> {
+
 
         @Override
         protected void onPostExecute(String str) {
@@ -93,8 +97,7 @@ public class ForecastFragment extends Fragment {
 
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
-            final String FATCH_BASE_URL =
-                    "http://api.themoviedb.org/3/discover/movie?";
+            final String FATCH_BASE_URL = "http://api.themoviedb.org/3/discover/movie?";
             final String SORY_BY = "sort_by";
             final String APPID_PARAM = "api_key";
             final String OPEN_MOVIE_API_KEY = "";
